@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bt3umb5c7rdsh"]
+[gd_scene load_steps=19 format=3 uid="uid://bt3umb5c7rdsh"]
 
 [ext_resource type="Script" path="res://GUI/main.gd" id="1_3quux"]
 [ext_resource type="Texture2D" uid="uid://bo70j7m7ipxty" path="res://assets/sprites/interrogation.png" id="1_eb6tx"]
@@ -28,6 +28,21 @@ Button/colors/font_color = Color(0.962733, 0.557627, 0.250034, 1)
 Button/colors/font_hover_color = Color(0.58762, 0.196521, 0.0133497, 1)
 Button/fonts/font = ExtResource("6_sau2q")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rccjp"]
+bg_color = Color(0.00781379, 0.173056, 0.198336, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_color = Color(0.0232807, 0.0183307, 0.0114123, 1)
+
+[sub_resource type="Theme" id="Theme_p8se5"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_rccjp")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7owf"]
+
+[sub_resource type="Theme" id="Theme_jttvm"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_e7owf")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tcibf"]
 bg_color = Color(0.0097365, 0.0774823, 0.0849037, 1)
 border_width_left = 3
@@ -37,13 +52,8 @@ border_width_bottom = 3
 border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Theme" id="Theme_pvvsn"]
+default_base_scale = 0.85
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_tcibf")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rccjp"]
-bg_color = Color(0.916226, 0.96348, 0.977139, 1)
-
-[sub_resource type="Theme" id="Theme_p8se5"]
-PanelContainer/styles/panel = SubResource("StyleBoxFlat_rccjp")
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_3quux")
@@ -80,98 +90,104 @@ layout_mode = 2
 texture_normal = ExtResource("2_wf5cu")
 texture_hover = ExtResource("4_6uii0")
 
-[node name="PrincipalPanel" type="Control" parent="."]
-layout_mode = 3
+[node name="PrincipalPanel" type="Control" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer/HBoxContainer/PrincipalPanel"]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -441.0
+offset_top = -231.5
+offset_right = 441.0
+offset_bottom = 231.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
-[node name="CanvasLayer" type="CanvasLayer" parent="PrincipalPanel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
 
-[node name="LeftPanel" type="PanelContainer" parent="PrincipalPanel/CanvasLayer"]
-offset_left = 230.0
-offset_top = 143.0
-offset_right = 369.0
-offset_bottom = 513.0
+[node name="LeftPanel" type="PanelContainer" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(34, 350)
+layout_mode = 2
+size_flags_vertical = 4
 theme = SubResource("Theme_71u13")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PrincipalPanel/CanvasLayer/LeftPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer/LeftPanel"]
 layout_mode = 2
 theme_override_constants/separation = 1
 
-[node name="TopicsLabel" type="Label" parent="PrincipalPanel/CanvasLayer/LeftPanel/VBoxContainer"]
+[node name="TopicsLabel" type="Label" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_4ra4q")
 text = "TOPICS"
 horizontal_alignment = 1
 
-[node name="AttackButton" type="Button" parent="PrincipalPanel/CanvasLayer/LeftPanel/VBoxContainer"]
+[node name="AttackButton" type="Button" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_ubwcp")
 theme_override_font_sizes/font_size = 12
 text = "ATTACK"
 alignment = 0
 
-[node name="DefenceButton" type="Button" parent="PrincipalPanel/CanvasLayer/LeftPanel/VBoxContainer"]
+[node name="DefenceButton" type="Button" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_ubwcp")
 theme_override_font_sizes/font_size = 12
 text = "DEFENSE"
 alignment = 0
 
-[node name="GranadeButton" type="Button" parent="PrincipalPanel/CanvasLayer/LeftPanel/VBoxContainer"]
+[node name="GranadeButton" type="Button" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_ubwcp")
 theme_override_font_sizes/font_size = 12
 text = "GRANADE"
 alignment = 0
 
-[node name="DeathTimeButton" type="Button" parent="PrincipalPanel/CanvasLayer/LeftPanel/VBoxContainer"]
+[node name="DeathTimeButton" type="Button" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_ubwcp")
 theme_override_font_sizes/font_size = 12
 text = "DEATH TIME"
 alignment = 0
 
-[node name="RightPanel" type="PanelContainer" parent="PrincipalPanel/CanvasLayer"]
-offset_left = 370.0
-offset_top = 94.0
-offset_right = 1000.0
-offset_bottom = 540.0
-theme = SubResource("Theme_pvvsn")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PrincipalPanel/CanvasLayer/RightPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
-[node name="ExitPanel" type="PanelContainer" parent="PrincipalPanel/CanvasLayer"]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -779.0
-offset_top = -227.0
-offset_right = -155.0
-offset_bottom = -177.0
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.999661, 0.458636)
+[node name="ExitPanel" type="PanelContainer" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 0
 theme = SubResource("Theme_p8se5")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PrincipalPanel/CanvasLayer/ExitPanel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/ExitPanel"]
 layout_mode = 2
+theme = SubResource("Theme_jttvm")
 alignment = 2
 
-[node name="TextureButton" type="TextureButton" parent="PrincipalPanel/CanvasLayer/ExitPanel/HBoxContainer"]
-custom_minimum_size = Vector2(55, 50)
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/ExitPanel/HBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 texture_normal = ExtResource("6_v0s5o")
 texture_hover = ExtResource("8_61c1v")
-stretch_mode = 3
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RightPanel" type="PanelContainer" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+theme = SubResource("Theme_pvvsn")
 
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/help_button" to="." method="_on_help_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/configuration_button" to="." method="_on_configuration_button_pressed"]
