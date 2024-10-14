@@ -58,10 +58,9 @@ PanelContainer/styles/panel = SubResource("StyleBoxFlat_tcibf")
 [node name="main" type="Node2D"]
 script = ExtResource("1_3quux")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
+[node name="HelpButtonLayer" type="CanvasLayer" parent="."]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HelpButtonLayer"]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -80,23 +79,20 @@ tooltip_text = "
 "
 theme_override_constants/separation = 10
 
-[node name="help_button" type="TextureButton" parent="CanvasLayer/HBoxContainer"]
+[node name="help_button" type="TextureButton" parent="HelpButtonLayer/HBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("1_eb6tx")
 texture_hover = ExtResource("2_m7cnb")
 
-[node name="configuration_button" type="TextureButton" parent="CanvasLayer/HBoxContainer"]
+[node name="configuration_button" type="TextureButton" parent="HelpButtonLayer/HBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("2_wf5cu")
 texture_hover = ExtResource("4_6uii0")
 
-[node name="PrincipalPanel" type="Control" parent="CanvasLayer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
+[node name="PrincipalPanelLayer" type="CanvasLayer" parent="."]
+visible = false
 
-[node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer/HBoxContainer/PrincipalPanel"]
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer"]
+[node name="MarginContainer" type="MarginContainer" parent="PrincipalPanelLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -113,70 +109,70 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PrincipalPanelLayer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="LeftPanel" type="PanelContainer" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer"]
+[node name="LeftPanel" type="PanelContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(34, 350)
 layout_mode = 2
 size_flags_vertical = 4
 theme = SubResource("Theme_71u13")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer/LeftPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel"]
 layout_mode = 2
 theme_override_constants/separation = 1
 
-[node name="TopicsLabel" type="Label" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+[node name="TopicsLabel" type="Label" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_4ra4q")
 text = "TOPICS"
 horizontal_alignment = 1
 
-[node name="AttackButton" type="Button" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+[node name="AttackButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_ubwcp")
 theme_override_font_sizes/font_size = 12
 text = "ATTACK"
 alignment = 0
 
-[node name="DefenceButton" type="Button" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+[node name="DefenceButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_ubwcp")
 theme_override_font_sizes/font_size = 12
 text = "DEFENSE"
 alignment = 0
 
-[node name="GranadeButton" type="Button" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+[node name="GranadeButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_ubwcp")
 theme_override_font_sizes/font_size = 12
 text = "GRANADE"
 alignment = 0
 
-[node name="DeathTimeButton" type="Button" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+[node name="DeathTimeButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_ubwcp")
 theme_override_font_sizes/font_size = 12
 text = "DEATH TIME"
 alignment = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="ExitPanel" type="PanelContainer" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="ExitPanel" type="PanelContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_vertical = 0
 theme = SubResource("Theme_p8se5")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/ExitPanel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/ExitPanel"]
 layout_mode = 2
 theme = SubResource("Theme_jttvm")
 alignment = 2
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/ExitPanel/HBoxContainer"]
+[node name="ExitButton" type="TextureButton" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/ExitPanel/HBoxContainer"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 texture_normal = ExtResource("6_v0s5o")
@@ -184,10 +180,11 @@ texture_hover = ExtResource("8_61c1v")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="RightPanel" type="PanelContainer" parent="CanvasLayer/HBoxContainer/PrincipalPanel/CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="RightPanel" type="PanelContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 theme = SubResource("Theme_pvvsn")
 
-[connection signal="pressed" from="CanvasLayer/HBoxContainer/help_button" to="." method="_on_help_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/HBoxContainer/configuration_button" to="." method="_on_configuration_button_pressed"]
+[connection signal="pressed" from="HelpButtonLayer/HBoxContainer/help_button" to="." method="_on_help_button_pressed"]
+[connection signal="pressed" from="HelpButtonLayer/HBoxContainer/configuration_button" to="." method="_on_configuration_button_pressed"]
+[connection signal="pressed" from="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/ExitPanel/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
