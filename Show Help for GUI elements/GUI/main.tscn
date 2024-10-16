@@ -1,13 +1,17 @@
-[gd_scene load_steps=19 format=3 uid="uid://bt3umb5c7rdsh"]
+[gd_scene load_steps=23 format=3 uid="uid://bt3umb5c7rdsh"]
 
 [ext_resource type="Script" path="res://GUI/main.gd" id="1_3quux"]
 [ext_resource type="Texture2D" uid="uid://bo70j7m7ipxty" path="res://assets/sprites/interrogation.png" id="1_eb6tx"]
 [ext_resource type="Texture2D" uid="uid://bwk0a0bx6tuc0" path="res://assets/sprites/hover_button.jpg" id="2_m7cnb"]
-[ext_resource type="Texture2D" uid="uid://5gbodlfip50b" path="res://assets/sprites/configuration.png" id="2_wf5cu"]
-[ext_resource type="Texture2D" uid="uid://cg8ad0sigrb2b" path="res://assets/sprites/hover_configuration.jpg" id="4_6uii0"]
 [ext_resource type="FontFile" uid="uid://crw3usvl5dopj" path="res://assets/calligraphy/DePixelBreit.ttf" id="6_sau2q"]
 [ext_resource type="Texture2D" uid="uid://vf2fjia8ml80" path="res://assets/sprites/exit.png" id="6_v0s5o"]
 [ext_resource type="Texture2D" uid="uid://byy1igqd12n7t" path="res://assets/sprites/hover_exit.jpg" id="8_61c1v"]
+[ext_resource type="Texture2D" uid="uid://dktaxjug5ptpw" path="res://assets/sprites/ControlsHelp.png" id="9_r3av6"]
+[ext_resource type="Texture2D" uid="uid://d3ai7dobc8qbo" path="res://assets/sprites/FireArms1.png" id="10_fopg6"]
+[ext_resource type="Texture2D" uid="uid://25pkp45ijjax" path="res://assets/sprites/FireArms2.png" id="11_3eq5t"]
+[ext_resource type="Texture2D" uid="uid://cvi26ex2nnmux" path="res://assets/sprites/Blades1.png" id="11_bnfuj"]
+[ext_resource type="Texture2D" uid="uid://chttm5gwlqjhl" path="res://assets/sprites/Blades2.png" id="12_6r7qg"]
+[ext_resource type="Texture2D" uid="uid://ugv4qfryswle" path="res://assets/sprites/FireArms3.png" id="12_bqmo4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cm4j8"]
 bg_color = Color(0.00784314, 0.0784314, 0.0862745, 1)
@@ -84,13 +88,7 @@ layout_mode = 2
 texture_normal = ExtResource("1_eb6tx")
 texture_hover = ExtResource("2_m7cnb")
 
-[node name="configuration_button" type="TextureButton" parent="HelpButtonLayer/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("2_wf5cu")
-texture_hover = ExtResource("4_6uii0")
-
 [node name="PrincipalPanelLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="PrincipalPanelLayer"]
 anchors_preset = 8
@@ -129,32 +127,49 @@ theme = SubResource("Theme_4ra4q")
 text = "TOPICS"
 horizontal_alignment = 1
 
-[node name="AttackButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+[node name="ControlsButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_ubwcp")
 theme_override_font_sizes/font_size = 12
-text = "ATTACK"
+text = "CONTROLS
+"
 alignment = 0
 
-[node name="DefenceButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+[node name="MainActionsButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_ubwcp")
 theme_override_font_sizes/font_size = 12
-text = "DEFENSE"
+text = "MAIN ACTIONS"
 alignment = 0
 
-[node name="GranadeButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+[node name="APButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_ubwcp")
 theme_override_font_sizes/font_size = 12
-text = "GRANADE"
+text = "APS AND MPS"
 alignment = 0
 
-[node name="DeathTimeButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+[node name="GUIButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_ubwcp")
 theme_override_font_sizes/font_size = 12
-text = "DEATH TIME"
+text = "GUI
+"
+alignment = 0
+
+[node name="FirearmsButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ubwcp")
+theme_override_font_sizes/font_size = 12
+text = "FIREARMS"
+alignment = 0
+
+[node name="BladesButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ubwcp")
+theme_override_font_sizes/font_size = 12
+text = "BLADES
+"
 alignment = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer"]
@@ -185,6 +200,235 @@ custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 theme = SubResource("Theme_pvvsn")
 
+[node name="ControlsScrollContainer" type="ScrollContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel"]
+visible = false
+layout_mode = 2
+mouse_force_pass_scroll_events = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/ControlsScrollContainer"]
+custom_minimum_size = Vector2(465, 1000)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="Label" type="Label" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/ControlsScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Controls"
+
+[node name="TextureRect" type="TextureRect" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/ControlsScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 190)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("9_r3av6")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Label2" type="Label" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/ControlsScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(465, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 11
+text = "In this dark and terrifying world, you’ll need to sharpen your senses and master the controls to survive:
+
+Movement:
+W/A/S/D or Arrow Keys: Navigate through the eerie hallways and shadowy forests.
+Interaction:
+
+E or Enter: Use this key to interact with mysterious objects, open creaky doors, or collect vital clues.
+Flashlight:
+
+F: Turn your flashlight on or off. Be cautious—its battery is limited, and the darkness is dangerous.
+Run:
+
+Left Shift: Run if you feel \"something\" is chasing you, but beware, running makes noise and could attract the attention of whatever lurks in the shadows.
+Crouch:
+ silent and out of sight.
+"
+autowrap_mode = 3
+
+[node name="MainScrollContainer2" type="ScrollContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/MainScrollContainer2"]
+layout_mode = 2
+
+[node name="MpsScrollContainer3" type="ScrollContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/MpsScrollContainer3"]
+layout_mode = 2
+
+[node name="GUIScrollContainer4" type="ScrollContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/GUIScrollContainer4"]
+layout_mode = 2
+
+[node name="FireScrollContainer" type="ScrollContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel"]
+visible = false
+layout_mode = 2
+
+[node name="Container" type="Control" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/FireScrollContainer"]
+custom_minimum_size = Vector2(300, 600)
+layout_mode = 2
+
+[node name="FireArmsLabel" type="Label" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/FireScrollContainer/Container"]
+layout_mode = 2
+offset_left = 2.0
+offset_top = 5.5
+offset_right = 402.0
+offset_bottom = 28.5
+text = "FireArms"
+
+[node name="GridContainer" type="GridContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/FireScrollContainer/Container"]
+custom_minimum_size = Vector2(300, 400)
+layout_mode = 2
+offset_left = -4.0
+offset_top = 45.5
+offset_right = 574.0
+offset_bottom = 445.5
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 17
+columns = 2
+
+[node name="FireArm1" type="TextureRect" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/FireScrollContainer/Container/GridContainer"]
+custom_minimum_size = Vector2(20, 50)
+layout_mode = 2
+texture = ExtResource("10_fopg6")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Arm1Label" type="Label" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/FireScrollContainer/Container/GridContainer"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 12
+text = "To use a grenade, pull the pin while holding the lever down. Aim at your target, then throw the grenade in a quick, fluid motion. After throwing, immediately take cover to avoid the explosion."
+autowrap_mode = 3
+
+[node name="FireArms2" type="TextureRect" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/FireScrollContainer/Container/GridContainer"]
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 2
+texture = ExtResource("11_3eq5t")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Arm2Label" type="Label" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/FireScrollContainer/Container/GridContainer"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "To use a rifle, hold it steady, aim through the sight or scope at a distant target, and squeeze the trigger gently to fire"
+autowrap_mode = 3
+
+[node name="FireArm3" type="TextureRect" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/FireScrollContainer/Container/GridContainer"]
+custom_minimum_size = Vector2(20, 50)
+layout_mode = 2
+texture = ExtResource("12_bqmo4")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Arm3Label" type="Label" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/FireScrollContainer/Container/GridContainer"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "For a shotgun, approach the target at close range, aim quickly at the center mass, and pull the trigger with a firm grip."
+autowrap_mode = 3
+
+[node name="FireArm4" type="TextureRect" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/FireScrollContainer/Container/GridContainer"]
+custom_minimum_size = Vector2(20, 50)
+layout_mode = 2
+texture = ExtResource("12_bqmo4")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Arm3Label2" type="Label" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/FireScrollContainer/Container/GridContainer"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "For a shotgun, approach the target at close range, aim quickly at the center mass, and pull the trigger with a firm grip."
+autowrap_mode = 3
+
+[node name="FireArm5" type="TextureRect" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/FireScrollContainer/Container/GridContainer"]
+custom_minimum_size = Vector2(20, 50)
+layout_mode = 2
+texture = ExtResource("12_bqmo4")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Arm3Label3" type="Label" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/FireScrollContainer/Container/GridContainer"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "For a shotgun, approach the target at close range, aim quickly at the center mass, and pull the trigger with a firm grip."
+autowrap_mode = 3
+
+[node name="BladesScrollContainer" type="ScrollContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel"]
+layout_mode = 2
+
+[node name="Container" type="Control" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/BladesScrollContainer"]
+custom_minimum_size = Vector2(450, 500)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/BladesScrollContainer/Container"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Blades
+"
+
+[node name="GridContainer" type="GridContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/BladesScrollContainer/Container"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+offset_top = 27.0
+offset_right = 450.0
+offset_bottom = 427.0
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 17
+columns = 2
+
+[node name="Blade1" type="TextureRect" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/BladesScrollContainer/Container/GridContainer"]
+custom_minimum_size = Vector2(20, 50)
+layout_mode = 2
+texture = ExtResource("11_bnfuj")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Blade1Label" type="Label" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/BladesScrollContainer/Container/GridContainer"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 12
+text = "To use a grenade, pull the pin while holding the lever down"
+autowrap_mode = 3
+
+[node name="Blade2" type="TextureRect" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/BladesScrollContainer/Container/GridContainer"]
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 2
+texture = ExtResource("12_6r7qg")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Blade2Label" type="Label" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/BladesScrollContainer/Container/GridContainer"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "This second type of blade, although less common, has a higher level of damage to its opponents."
+autowrap_mode = 3
+
+[node name="BladesLabel2" type="Label" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/BladesScrollContainer/Container"]
+custom_minimum_size = Vector2(450, 400)
+layout_mode = 2
+offset_left = 15.0
+offset_top = 147.5
+offset_right = 465.0
+offset_bottom = 547.5
+theme_override_font_sizes/font_size = 13
+text = "
+In a game, blades can be versatile weapons used for both offense and defense. Players can use them to perform quick, light attacks that deal damage in rapid succession or execute powerful strikes with slower, more deliberate movements. Blades are often effective in close combat, allowing players to dodge or parry incoming attacks while staying mobile.
+
+To make the most of blades, focus on speed and precision. Timing your attacks and dodges is key to outmaneuvering enemies. Some games may also let you upgrade blades with special abilities, like increasing damage, adding elemental effects, or enhancing critical hit chances."
+autowrap_mode = 3
+
 [connection signal="pressed" from="HelpButtonLayer/HBoxContainer/help_button" to="." method="_on_help_button_pressed"]
-[connection signal="pressed" from="HelpButtonLayer/HBoxContainer/configuration_button" to="." method="_on_configuration_button_pressed"]
 [connection signal="pressed" from="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/ExitPanel/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
