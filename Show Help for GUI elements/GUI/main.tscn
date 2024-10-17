@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bt3umb5c7rdsh"]
+[gd_scene load_steps=35 format=3 uid="uid://bt3umb5c7rdsh"]
 
 [ext_resource type="Script" path="res://GUI/main.gd" id="1_3quux"]
 [ext_resource type="Texture2D" uid="uid://bo70j7m7ipxty" path="res://assets/sprites/interrogation.png" id="1_eb6tx"]
@@ -6,12 +6,21 @@
 [ext_resource type="FontFile" uid="uid://crw3usvl5dopj" path="res://assets/calligraphy/DePixelBreit.ttf" id="6_sau2q"]
 [ext_resource type="Texture2D" uid="uid://vf2fjia8ml80" path="res://assets/sprites/exit.png" id="6_v0s5o"]
 [ext_resource type="Texture2D" uid="uid://byy1igqd12n7t" path="res://assets/sprites/hover_exit.jpg" id="8_61c1v"]
+[ext_resource type="Texture2D" uid="uid://c8hygppgndud4" path="res://assets/sprites/GifCharacter/personaje1.png" id="8_pf2af"]
+[ext_resource type="Texture2D" uid="uid://cfa1vug6707c8" path="res://assets/sprites/AtlasPersonaje.png" id="8_stp64"]
+[ext_resource type="Texture2D" uid="uid://bl5cud1o4scjh" path="res://assets/sprites/GifCharacter/personaje2.png" id="9_otkse"]
 [ext_resource type="Texture2D" uid="uid://dktaxjug5ptpw" path="res://assets/sprites/ControlsHelp.png" id="9_r3av6"]
 [ext_resource type="Texture2D" uid="uid://d3ai7dobc8qbo" path="res://assets/sprites/FireArms1.png" id="10_fopg6"]
+[ext_resource type="Texture2D" uid="uid://2277nnk37sqm" path="res://assets/sprites/GifCharacter/personaje3.png" id="10_ve0uy"]
+[ext_resource type="Texture2D" uid="uid://k66656ruuqbs" path="res://assets/sprites/GifCharacter/personaje4.png" id="11_2qm4x"]
 [ext_resource type="Texture2D" uid="uid://25pkp45ijjax" path="res://assets/sprites/FireArms2.png" id="11_3eq5t"]
 [ext_resource type="Texture2D" uid="uid://cvi26ex2nnmux" path="res://assets/sprites/Blades1.png" id="11_bnfuj"]
 [ext_resource type="Texture2D" uid="uid://chttm5gwlqjhl" path="res://assets/sprites/Blades2.png" id="12_6r7qg"]
 [ext_resource type="Texture2D" uid="uid://ugv4qfryswle" path="res://assets/sprites/FireArms3.png" id="12_bqmo4"]
+[ext_resource type="Texture2D" uid="uid://i6mae8gadqas" path="res://assets/sprites/GifCharacter/personaje5.png" id="12_bu4du"]
+[ext_resource type="Texture2D" uid="uid://cqd03capraamf" path="res://assets/sprites/GifCharacter/personaje6.png" id="13_njmrm"]
+[ext_resource type="Texture2D" uid="uid://bgsrtv5qrvlmt" path="res://assets/sprites/GifCharacter/personaje7.png" id="14_6sadd"]
+[ext_resource type="Texture2D" uid="uid://cnntlhg46ardp" path="res://assets/sprites/GifCharacter/personaje8.png" id="15_tqbfr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cm4j8"]
 bg_color = Color(0.00784314, 0.0784314, 0.0862745, 1)
@@ -58,6 +67,44 @@ border_color = Color(0, 0, 0, 1)
 [sub_resource type="Theme" id="Theme_pvvsn"]
 default_base_scale = 0.85
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_tcibf")
+
+[sub_resource type="Animation" id="Animation_xrtwb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Control/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_pf2af")]
+}
+
+[sub_resource type="Animation" id="Animation_t15fm"]
+resource_name = "character"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Control/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1.41421, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_pf2af"), ExtResource("9_otkse"), ExtResource("10_ve0uy"), ExtResource("11_2qm4x"), ExtResource("12_bu4du"), ExtResource("13_njmrm"), ExtResource("14_6sadd"), ExtResource("15_tqbfr")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2fx3h"]
+_data = {
+"RESET": SubResource("Animation_xrtwb"),
+"character": SubResource("Animation_t15fm")
+}
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_3quux")
@@ -248,16 +295,75 @@ Crouch:
 autowrap_mode = 3
 
 [node name="MainScrollContainer2" type="ScrollContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel"]
+visible = false
 layout_mode = 2
 
 [node name="Control" type="Control" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/MainScrollContainer2"]
 layout_mode = 2
 
+[node name="Label" type="Label" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/MainScrollContainer2/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Main Actions"
+
+[node name="TextureRect" type="TextureRect" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/MainScrollContainer2/Control"]
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 0
+offset_left = 24.0
+offset_top = 42.5
+offset_right = 274.0
+offset_bottom = 242.5
+texture = ExtResource("8_stp64")
+expand_mode = 2
+
+[node name="AnimationTree" type="AnimationPlayer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/MainScrollContainer2/Control/TextureRect"]
+
 [node name="MpsScrollContainer3" type="ScrollContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/MpsScrollContainer3"]
+[node name="Control" type="Control" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/MpsScrollContainer3"]
+custom_minimum_size = Vector2(300, 700)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/MpsScrollContainer3/Control"]
+layout_mode = 2
+offset_left = 22.0
+offset_top = 11.5
+offset_right = 222.0
+offset_bottom = 34.5
+text = "Aps and Mps"
+
+[node name="TextureRect" type="TextureRect" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/MpsScrollContainer3/Control"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+offset_left = 37.0
+offset_top = 52.5
+offset_right = 237.0
+offset_bottom = 252.5
+texture = ExtResource("9_otkse")
+expand_mode = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/MpsScrollContainer3/Control/TextureRect"]
+root_node = NodePath("")
+libraries = {
+"": SubResource("AnimationLibrary_2fx3h")
+}
+
+[node name="Label2" type="Label" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/MpsScrollContainer3/Control"]
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 0
+offset_left = 24.0
+offset_top = 276.5
+offset_right = 474.0
+offset_bottom = 420.5
+theme_override_font_sizes/font_size = 13
+text = "With an AnimationPlayer, you could define an animation that cycles through your atlas frames, setting timings and transitions easily. You could also easily integrate it with your interface, controlling its visibility and activation through code when needed.
+
+However, if you prefer a more straightforward approach with code, you can tweak the script to display the atlas frames manually."
+autowrap_mode = 3
 
 [node name="GUIScrollContainer4" type="ScrollContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel"]
 layout_mode = 2
@@ -364,6 +470,7 @@ text = "For a shotgun, approach the target at close range, aim quickly at the ce
 autowrap_mode = 3
 
 [node name="BladesScrollContainer" type="ScrollContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel"]
+visible = false
 layout_mode = 2
 
 [node name="Container" type="Control" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/BladesScrollContainer"]
@@ -431,4 +538,10 @@ To make the most of blades, focus on speed and precision. Timing your attacks an
 autowrap_mode = 3
 
 [connection signal="pressed" from="HelpButtonLayer/HBoxContainer/help_button" to="." method="_on_help_button_pressed"]
+[connection signal="pressed" from="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/ControlsButton" to="." method="_on_controls_button_pressed"]
+[connection signal="pressed" from="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/MainActionsButton" to="." method="_on_main_actions_button_pressed"]
+[connection signal="pressed" from="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/APButton" to="." method="_on_ap_button_pressed"]
+[connection signal="pressed" from="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/GUIButton" to="." method="_on_gui_button_pressed"]
+[connection signal="pressed" from="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/FirearmsButton" to="." method="_on_firearms_button_pressed"]
+[connection signal="pressed" from="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/BladesButton" to="." method="_on_blades_button_pressed"]
 [connection signal="pressed" from="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/ExitPanel/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
