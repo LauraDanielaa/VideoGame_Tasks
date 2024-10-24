@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dktaxjug5ptpw"
-path="res://.godot/imported/ControlsHelp.png-114eb8927956b5d40f18ae4455598551.ctex"
+uid="uid://cydjio36hpx8d"
+path="res://.godot/imported/blade2.png-3bfeb0ca01d553546bafc9edb8f9dc2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ControlsHelp.png"
-dest_files=["res://.godot/imported/ControlsHelp.png-114eb8927956b5d40f18ae4455598551.ctex"]
+source_file="res://assets/sprites/blade2.png"
+dest_files=["res://.godot/imported/blade2.png-3bfeb0ca01d553546bafc9edb8f9dc2c.ctex"]
 
 [params]
 

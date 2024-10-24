@@ -35,13 +35,38 @@ texto_ayuda = "que tal va todo"
 
 [sub_resource type="Resource" id="Resource_w86b4"]
 script = ExtResource("6_cn7je")
-titulo = ""
-texto_ayuda = ""
+titulo = "Main Actions"
+texto_ayuda = "[b]Fire Arms[/b] 
+
+[table=1]
+[cell padding=0,0,0,5][font_size=11]To use a rifle, hold it steady, aim through the sight or scope at a distant target, and squeeze the trigger gently to fire[/font_size][/cell]
+
+[cell padding=0,5,0,5][center][img=350%]res://assets/sprites/MainActions.png[/img][/center][/cell]
+
+[cell padding=0,5,0,5][font_size=11]This second type of blade, although less common, has a higher level of damage to its opponents.[/font_size][/cell]
+
+[cell padding=0,5,0,5][center][img=350%]res://assets/sprites/MainActions2.png[/img][/center][/cell]
+
+[/table]
+"
 
 [sub_resource type="Resource" id="Resource_u35g0"]
 script = ExtResource("6_cn7je")
-titulo = ""
-texto_ayuda = ""
+titulo = "Aps and Mps "
+texto_ayuda = "[ul]
+[font_size=11][color= WEB_MAROON]Ap[/color] are action points that limit the number of actions a character can perform in a turn.[/font_size]
+[font_size=11][color= WEB_MAROON]Mp[/color] are magic points that determine the amount of magic skills or spells a character can cast.[/font_size]
+[/ul]
+
+[table=2]
+[cell][img=140%]res://assets/sprites/apsMps.png[/img][/cell][cell][font_size=11]aps and mps that the player has are shown in a bar at the bottom of the game. When the player loses the total aps he loses the game.[/font_size][/cell]
+[/table]
+[table=1]
+[cell][center][img=350%]res://assets/sprites/apsMps2.png[/img][/center][/cell]
+[cell][font_size=11]When the player shoots an enemy, his AP is reduced.[/font_size][/cell]
+[/table]
+
+"
 
 [sub_resource type="Resource" id="Resource_5lx6f"]
 script = ExtResource("6_cn7je")
@@ -51,12 +76,45 @@ texto_ayuda = ""
 [sub_resource type="Resource" id="Resource_k8cdx"]
 script = ExtResource("6_cn7je")
 titulo = "Fire Arms"
-texto_ayuda = ""
+texto_ayuda = "[b]Fire Arms[/b] 
+
+[table=2]
+[cell][center][img=75%]res://assets/sprites/FireArms1.png[/img][/center][/cell][cell][font_size=11]To use a grenade, pull the pin while holding the lever down. Aim at your target, then throw the grenade in a quick, fluid motion. After throwing, immediately take cover to avoid the explosion.[/font_size][/cell]
+
+
+[cell][center][img=150]res://assets/sprites/FireArms2.png[/img][/center][/cell][cell][font_size=11]To use a rifle, hold it steady, aim through the sight or scope at a distant target, and squeeze the trigger gently to fire[/font_size][/cell]
+
+
+[cell][center][img=75%]res://assets/sprites/FireArms3.png[/img][/center][/cell][cell][font_size=11]For a shotgun, approach the target at close range, aim quickly at the center mass, and pull the trigger with a firm grip.[/font_size][/cell]
+
+
+[cell][center][img=75%]res://assets/sprites/FireArms3.png[/img][/center][/cell][cell][font_size=11]Texto correspondiente a la imagen 4[/font_size][/cell]
+
+
+[cell][center][img=75%]res://assets/sprites/FireArms3.png[/img][/center][/cell][cell][font_size=11]Texto correspondiente a la imagen 5[/font_size][/cell]
+
+
+[cell][center][img=75%]res://assets/sprites/FireArms3.png[/img][/center][/cell][cell][font_size=11]Texto correspondiente a la imagen 5[/font_size][/cell]
+
+[/table]
+"
 
 [sub_resource type="Resource" id="Resource_n03jy"]
 script = ExtResource("6_cn7je")
 titulo = "Blades"
-texto_ayuda = ""
+texto_ayuda = "[b]Fire Arms[/b] 
+[table=2]
+[cell][center][img=75%]res://assets/sprites/Blades1.png[/img][/center][/cell][cell][font_size=11]To use a grenade, pull the pin while holding the lever down.[/font_size][/cell]
+
+
+[cell][center][img=75%]res://assets/sprites/blade2.png[/img][/center][/cell][cell][font_size=11]This second type of blade, although less common, has a higher level of damage to its opponents.[/font_size][/cell]
+[/table]
+[font_size=11]In a game, blades can be versatile weapons used for both offense and defense. Players can use them to perform quick, light attacks that deal damage in rapid succession or execute powerful strikes with slower, more deliberate movements. Blades are often effective in close combat, allowing players to dodge or parry incoming attacks while staying mobile[/font_size]
+
+[font_size=11]To make the most of blades, focus on speed and precision. Timing your attacks and dodges is key to outmaneuvering enemies. Some games may also let you upgrade blades with special abilities, like increasing damage, adding elemental effects, or enhancing critical hit chances[/font_size]
+
+
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rccjp"]
 bg_color = Color(0.00781379, 0.173056, 0.198336, 1)
@@ -245,7 +303,6 @@ layout_mode = 2
 custom_minimum_size = Vector2(500, 380)
 layout_mode = 2
 bbcode_enabled = true
-fit_content = true
 
 [connection signal="pressed" from="HelpButtonLayer/HBoxContainer/help_button" to="." method="_on_help_button_pressed"]
 [connection signal="pressed" from="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/ExitPanel/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

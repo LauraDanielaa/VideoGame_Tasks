@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chttm5gwlqjhl"
-path="res://.godot/imported/Blades2.png-79a63f4468702b6d969e163285a26639.ctex"
+uid="uid://dktaxjug5ptpw"
+path="res://.godot/imported/MainActions.png-0ffc76f0977aa06ec959891e8260a789.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Blades2.png"
-dest_files=["res://.godot/imported/Blades2.png-79a63f4468702b6d969e163285a26639.ctex"]
+source_file="res://assets/sprites/MainActions.png"
+dest_files=["res://.godot/imported/MainActions.png-0ffc76f0977aa06ec959891e8260a789.ctex"]
 
 [params]
 
