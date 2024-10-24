@@ -1,0 +1,251 @@
+[gd_scene load_steps=25 format=3 uid="uid://bt3umb5c7rdsh"]
+
+[ext_resource type="Script" path="res://GUI/main.gd" id="1_3quux"]
+[ext_resource type="Texture2D" uid="uid://bo70j7m7ipxty" path="res://assets/sprites/interrogation.png" id="1_eb6tx"]
+[ext_resource type="Texture2D" uid="uid://bwk0a0bx6tuc0" path="res://assets/sprites/hover_button.jpg" id="2_m7cnb"]
+[ext_resource type="Script" path="res://GUI/button.gd" id="5_wcxnc"]
+[ext_resource type="Script" path="res://GUI/RightPanelText.gd" id="6_cn7je"]
+[ext_resource type="FontFile" uid="uid://crw3usvl5dopj" path="res://assets/calligraphy/DePixelBreit.ttf" id="6_sau2q"]
+[ext_resource type="Texture2D" uid="uid://vf2fjia8ml80" path="res://assets/sprites/exit.png" id="6_v0s5o"]
+[ext_resource type="Texture2D" uid="uid://byy1igqd12n7t" path="res://assets/sprites/hover_exit.jpg" id="8_61c1v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cm4j8"]
+bg_color = Color(0.00784314, 0.0784314, 0.0862745, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_71u13"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_cm4j8")
+
+[sub_resource type="Theme" id="Theme_4ra4q"]
+Label/fonts/font = ExtResource("6_sau2q")
+Label/styles/normal = null
+
+[sub_resource type="Theme" id="Theme_ubwcp"]
+Button/colors/font_color = Color(0.962733, 0.557627, 0.250034, 1)
+Button/colors/font_hover_color = Color(0.58762, 0.196521, 0.0133497, 1)
+Button/fonts/font = ExtResource("6_sau2q")
+
+[sub_resource type="Resource" id="Resource_whfg6"]
+script = ExtResource("6_cn7je")
+titulo = "holaaa"
+texto_ayuda = "que tal va todo"
+
+[sub_resource type="Resource" id="Resource_w86b4"]
+script = ExtResource("6_cn7je")
+titulo = ""
+texto_ayuda = ""
+
+[sub_resource type="Resource" id="Resource_u35g0"]
+script = ExtResource("6_cn7je")
+titulo = ""
+texto_ayuda = ""
+
+[sub_resource type="Resource" id="Resource_5lx6f"]
+script = ExtResource("6_cn7je")
+titulo = ""
+texto_ayuda = ""
+
+[sub_resource type="Resource" id="Resource_k8cdx"]
+script = ExtResource("6_cn7je")
+titulo = "Fire Arms"
+texto_ayuda = ""
+
+[sub_resource type="Resource" id="Resource_n03jy"]
+script = ExtResource("6_cn7je")
+titulo = "Blades"
+texto_ayuda = ""
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rccjp"]
+bg_color = Color(0.00781379, 0.173056, 0.198336, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_color = Color(0.0232807, 0.0183307, 0.0114123, 1)
+
+[sub_resource type="Theme" id="Theme_p8se5"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_rccjp")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7owf"]
+
+[sub_resource type="Theme" id="Theme_jttvm"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_e7owf")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tcibf"]
+bg_color = Color(0.0097365, 0.0774823, 0.0849037, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_pvvsn"]
+default_base_scale = 0.85
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_tcibf")
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_3quux")
+
+[node name="HelpButtonLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HelpButtonLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -62.0
+offset_top = -37.0
+offset_right = 109.0
+offset_bottom = 38.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.374083, 0.4)
+tooltip_text = "
+
+
+"
+theme_override_constants/separation = 10
+
+[node name="help_button" type="TextureButton" parent="HelpButtonLayer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_eb6tx")
+texture_hover = ExtResource("2_m7cnb")
+
+[node name="PrincipalPanelLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="PrincipalPanelLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -441.0
+offset_top = -231.5
+offset_right = 441.0
+offset_bottom = 231.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PrincipalPanelLayer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LeftPanel" type="PanelContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(34, 350)
+layout_mode = 2
+size_flags_vertical = 4
+theme = SubResource("Theme_71u13")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="TopicsLabel" type="Label" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_4ra4q")
+text = "TOPICS"
+horizontal_alignment = 1
+
+[node name="ControlsButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ubwcp")
+theme_override_font_sizes/font_size = 12
+text = "CONTROLS
+"
+alignment = 0
+script = ExtResource("5_wcxnc")
+right_panel_text = SubResource("Resource_whfg6")
+
+[node name="MainActionsButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ubwcp")
+theme_override_font_sizes/font_size = 12
+text = "MAIN ACTIONS"
+alignment = 0
+script = ExtResource("5_wcxnc")
+right_panel_text = SubResource("Resource_w86b4")
+
+[node name="APButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ubwcp")
+theme_override_font_sizes/font_size = 12
+text = "APS AND MPS"
+alignment = 0
+script = ExtResource("5_wcxnc")
+right_panel_text = SubResource("Resource_u35g0")
+
+[node name="GUIButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ubwcp")
+theme_override_font_sizes/font_size = 12
+text = "GUI
+"
+alignment = 0
+script = ExtResource("5_wcxnc")
+right_panel_text = SubResource("Resource_5lx6f")
+
+[node name="FirearmsButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ubwcp")
+theme_override_font_sizes/font_size = 12
+text = "FIREARMS"
+alignment = 0
+script = ExtResource("5_wcxnc")
+right_panel_text = SubResource("Resource_k8cdx")
+
+[node name="BladesButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ubwcp")
+theme_override_font_sizes/font_size = 12
+text = "BLADES
+"
+alignment = 0
+script = ExtResource("5_wcxnc")
+right_panel_text = SubResource("Resource_n03jy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ExitPanel" type="PanelContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_p8se5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/ExitPanel"]
+layout_mode = 2
+theme = SubResource("Theme_jttvm")
+alignment = 2
+
+[node name="ExitButton" type="TextureButton" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/ExitPanel/HBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture_normal = ExtResource("6_v0s5o")
+texture_hover = ExtResource("8_61c1v")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RightPanel" type="PanelContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+theme = SubResource("Theme_pvvsn")
+
+[node name="CenterContainer" type="CenterContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/RightPanel/CenterContainer"]
+custom_minimum_size = Vector2(500, 380)
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+
+[connection signal="pressed" from="HelpButtonLayer/HBoxContainer/help_button" to="." method="_on_help_button_pressed"]
+[connection signal="pressed" from="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/ExitPanel/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
