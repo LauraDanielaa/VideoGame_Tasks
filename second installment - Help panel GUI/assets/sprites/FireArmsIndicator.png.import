@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5gbodlfip50b"
-path="res://.godot/imported/configuration.png-7d84f1193429360c0cd2365dc095920f.ctex"
+uid="uid://drhdflddufsbd"
+path="res://.godot/imported/FireArmsIndicator.png-3c6c10dd145a577abbfee7a245355988.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/configuration.png"
-dest_files=["res://.godot/imported/configuration.png-7d84f1193429360c0cd2365dc095920f.ctex"]
+source_file="res://assets/sprites/FireArmsIndicator.png"
+dest_files=["res://.godot/imported/FireArmsIndicator.png-3c6c10dd145a577abbfee7a245355988.ctex"]
 
 [params]
 

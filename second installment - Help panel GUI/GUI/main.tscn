@@ -30,13 +30,34 @@ Button/fonts/font = ExtResource("6_sau2q")
 
 [sub_resource type="Resource" id="Resource_whfg6"]
 script = ExtResource("6_cn7je")
-titulo = "holaaa"
-texto_ayuda = "que tal va todo"
+titulo = "Controls"
+texto_ayuda = "[b]Main Actions[/b] 
+
+[font_size=11]To move around the different scenes and kill your enemies you must to know the next buttons and comands:[/font_size]
+
+[table=2]
+[cell][img=75%]res://assets/sprites/controls.png[/img][/cell]
+[cell][font_size=11][ul bullet=-]
+ To jump press the button [color= WEB_MAROON]W[/color] 
+ To move to the left press the button [color= WEB_MAROON]A[/color] 
+ To move to the right button [color= WEB_MAROON]D[/color] 
+ To bend down press the button [color= WEB_MAROON]S[/color] 
+[/ul][/font_size][/cell]
+[/table]
+
+[font_size=11]Otherwise, if you prefer to move with other bottons: [/font_size]
+
+[table=2]
+[cell][img=75%]res://assets/sprites/controls2.png[/img][/cell]
+[cell][font_size=11]
+Move through the scene as indicated by one of the arrows on the buttons
+[/font_size][/cell]
+[/table]"
 
 [sub_resource type="Resource" id="Resource_w86b4"]
 script = ExtResource("6_cn7je")
 titulo = "Main Actions"
-texto_ayuda = "[b]Fire Arms[/b] 
+texto_ayuda = "[b]Main Actions[/b] 
 
 [table=1]
 [cell padding=0,0,0,5][font_size=11]To use a rifle, hold it steady, aim through the sight or scope at a distant target, and squeeze the trigger gently to fire[/font_size][/cell]
@@ -53,48 +74,66 @@ texto_ayuda = "[b]Fire Arms[/b]
 [sub_resource type="Resource" id="Resource_u35g0"]
 script = ExtResource("6_cn7je")
 titulo = "Aps and Mps "
-texto_ayuda = "[ul]
-[font_size=11][color= WEB_MAROON]Ap[/color] are action points that limit the number of actions a character can perform in a turn.[/font_size]
-[font_size=11][color= WEB_MAROON]Mp[/color] are magic points that determine the amount of magic skills or spells a character can cast.[/font_size]
-[/ul]
+texto_ayuda = "[b]Aps and Mps[/b] 
 
-[table=2]
-[cell][img=140%]res://assets/sprites/apsMps.png[/img][/cell][cell][font_size=11]aps and mps that the player has are shown in a bar at the bottom of the game. When the player loses the total aps he loses the game.[/font_size][/cell]
+[table=2, center]
+[cell][img=140%, center]res://assets/sprites/apsMps.png[/img][/cell][cell][font_size=11]aps and mps that the player has are shown in a bar at the bottom of the game. When the player loses the total aps he loses the game.[/font_size][/cell]
 [/table]
+[font_size=11]
+[ul bullet=-]
+[color= WEB_MAROON]Ap[/color]: are action points that limit the number of actions a character can perform in a turn.
+[color= WEB_MAROON]Mp[/color]: are magic points that determine the amount of magic skills or spells a character can cast.
+[/ul]
+[/font_size]
 [table=1]
-[cell][center][img=350%]res://assets/sprites/apsMps2.png[/img][/center][/cell]
-[cell][font_size=11]When the player shoots an enemy, his AP is reduced.[/font_size][/cell]
+[cell padding=0,5,0,5][center][img=350%]res://assets/sprites/apsMps2.png[/img][/center][/cell]
+[cell padding=0,5,0,5][font_size=11]This second type of blade, although less common, has a higher level of damage to its opponents.[/font_size][/cell]
+[/table]
+[table=2, center]
+[cell][img=35%]res://assets/sprites/apMp3.png[/img][/cell][cell][font_size=11]In case you have low AP you can use a first aid kit to heal yourself[/font_size][/cell]
 [/table]
 
 "
 
 [sub_resource type="Resource" id="Resource_5lx6f"]
 script = ExtResource("6_cn7je")
-titulo = ""
-texto_ayuda = ""
+titulo = "GUI"
+texto_ayuda = "[b]interface[/b] 
+
+[table=2, center]
+[cell][img=80%]res://assets/sprites/ObjectsMenu.png[/img][/cell][cell][font_size=11]Weapons are acquired as you walk through the scenes, these are saved in the [color= DARK_ORANGE]objects menú[/color].[/font_size][/cell]
+[/table]
+[font_size=11]The fire arms and ammunition equipment that you can find in the game are listed below:[/font_size]
+
+[table=2, center]
+[cell][img=80%]res://assets/sprites/GUImap.png[/img][/cell][cell][font_size=11]In the upper right corner you can find the [color= DARK_ORANGE]map[/color], where you can see where you are located in the scene you are in.[/font_size][/cell]
+[/table]
+[font_size=11]The fire arms and ammunition equipment that you can find in the game are listed below:[/font_size]
+
+
+"
 
 [sub_resource type="Resource" id="Resource_k8cdx"]
 script = ExtResource("6_cn7je")
 titulo = "Fire Arms"
 texto_ayuda = "[b]Fire Arms[/b] 
 
-[table=2]
-[cell][center][img=75%]res://assets/sprites/FireArms1.png[/img][/center][/cell][cell][font_size=11]To use a grenade, pull the pin while holding the lever down. Aim at your target, then throw the grenade in a quick, fluid motion. After throwing, immediately take cover to avoid the explosion.[/font_size][/cell]
+[table=2, center]
+[cell][img=105%]res://assets/sprites/FireArmsIndicator.png[/img][/cell][cell][font_size=11]In the lower left corner, in addition to seeing the player's condition, you can see what weapon he is using and if he has ammunition.[/font_size][/cell]
+[/table]
+[font_size=11]The fire arms and ammunition equipment that you can find in the game are listed below:[/font_size]
 
+[table=2]
+[cell][center][img=150]res://assets/sprites/FireArms4.png[/img][/center][/cell][cell][font_size=11]To use a grenade, pull the pin while holding the lever down. Aim at your target, then throw the grenade in a quick, fluid motion. After throwing, immediately take cover to avoid the explosion.[/font_size][/cell]
+
+[cell][center][img=75%]res://assets/sprites/FireArms1.png[/img][/center][/cell][cell][font_size=11]To use a grenade, pull the pin while holding the lever down. Aim at your target, then throw the grenade in a quick, fluid motion. After throwing, immediately take cover to avoid the explosion.[/font_size][/cell]
 
 [cell][center][img=150]res://assets/sprites/FireArms2.png[/img][/center][/cell][cell][font_size=11]To use a rifle, hold it steady, aim through the sight or scope at a distant target, and squeeze the trigger gently to fire[/font_size][/cell]
 
 
-[cell][center][img=75%]res://assets/sprites/FireArms3.png[/img][/center][/cell][cell][font_size=11]For a shotgun, approach the target at close range, aim quickly at the center mass, and pull the trigger with a firm grip.[/font_size][/cell]
+[cell][center][img=75%]res://assets/sprites/FireArms3.png[/img][/center][/cell][cell][font_size=11]Using a pistol you must to approach the target at close range, aim quickly at the center mass, and pull the trigger with a firm grip.[/font_size][/cell]
 
-
-[cell][center][img=75%]res://assets/sprites/FireArms3.png[/img][/center][/cell][cell][font_size=11]Texto correspondiente a la imagen 4[/font_size][/cell]
-
-
-[cell][center][img=75%]res://assets/sprites/FireArms3.png[/img][/center][/cell][cell][font_size=11]Texto correspondiente a la imagen 5[/font_size][/cell]
-
-
-[cell][center][img=75%]res://assets/sprites/FireArms3.png[/img][/center][/cell][cell][font_size=11]Texto correspondiente a la imagen 5[/font_size][/cell]
+[cell][center][img=75%]res://assets/sprites/FireArms5.png[/img][/center][/cell][cell][font_size=11]Pistol ammunition[/font_size][/cell]
 
 [/table]
 "
@@ -169,6 +208,8 @@ theme_override_constants/separation = 10
 
 [node name="help_button" type="TextureButton" parent="HelpButtonLayer/HBoxContainer"]
 layout_mode = 2
+tooltip_text = "Help panel"
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("1_eb6tx")
 texture_hover = ExtResource("2_m7cnb")
 
@@ -303,6 +344,22 @@ layout_mode = 2
 custom_minimum_size = Vector2(500, 380)
 layout_mode = 2
 bbcode_enabled = true
+text = "[b]Help Panel [/b] 
+
+[font_size=11]If you have questions about the game, here you can find information about the elements that make up the game and how to play.
+
+In this panel you will find each piece of information in a sectioned form in each of the buttons on the left side.:[/font_size]
+
+[font_size=11][ul bullet=-]
+ [hint=Information about the buttons you should use to move around the game][color= ORANGE_RED]Controls[/color][/hint]
+ [color= ORANGE_RED]Main Actions[/color] 
+ [color= ORANGE_RED]Aps and Mps[/color] 
+ [color= ORANGE_RED]Fire Arms and ammunition[/color] 
+ [color= ORANGE_RED]Blades[/color] 
+[/ul][/font_size]
+
+
+"
 
 [connection signal="pressed" from="HelpButtonLayer/HBoxContainer/help_button" to="." method="_on_help_button_pressed"]
 [connection signal="pressed" from="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/ExitPanel/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
