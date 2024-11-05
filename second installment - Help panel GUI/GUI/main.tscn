@@ -33,25 +33,25 @@ script = ExtResource("6_cn7je")
 titulo = "Controls"
 texto_ayuda = "[b]Main Actions[/b] 
 
-[font_size=11]To move around the different scenes and kill your enemies you must to know the next buttons and comands:[/font_size]
+To move around the different scenes and kill your enemies you must to know the next buttons and comands:
 
 [table=2]
 [cell][img=75%]res://assets/sprites/controls.png[/img][/cell]
-[cell][font_size=11][ul bullet=-]
+[cell][ul bullet=-]
  To jump press the button [color= WEB_MAROON]W[/color] 
  To move to the left press the button [color= WEB_MAROON]A[/color] 
  To move to the right button [color= WEB_MAROON]D[/color] 
  To bend down press the button [color= WEB_MAROON]S[/color] 
-[/ul][/font_size][/cell]
+[/ul][/cell]
 [/table]
 
-[font_size=11]Otherwise, if you prefer to move with other bottons: [/font_size]
+Otherwise, if you prefer to move with other bottons: 
 
 [table=2]
 [cell][img=75%]res://assets/sprites/controls2.png[/img][/cell]
-[cell][font_size=11]
+[cell]
 Move through the scene as indicated by one of the arrows on the buttons
-[/font_size][/cell]
+[/cell]
 [/table]"
 
 [sub_resource type="Resource" id="Resource_w86b4"]
@@ -60,11 +60,11 @@ titulo = "Main Actions"
 texto_ayuda = "[b]Main Actions[/b] 
 
 [table=1]
-[cell padding=0,0,0,5][font_size=11]To use a rifle, hold it steady, aim through the sight or scope at a distant target, and squeeze the trigger gently to fire[/font_size][/cell]
+[cell padding=0,0,0,5]To use a rifle, hold it steady, aim through the sight or scope at a distant target, and squeeze the trigger gently to fire[/cell]
 
 [cell padding=0,5,0,5][center][img=350%]res://assets/sprites/MainActions.png[/img][/center][/cell]
 
-[cell padding=0,5,0,5][font_size=11]This second type of blade, although less common, has a higher level of damage to its opponents.[/font_size][/cell]
+[cell padding=0,5,0,5]This second type of blade, although less common, has a higher level of damage to its opponents.[/cell]
 
 [cell padding=0,5,0,5][center][img=350%]res://assets/sprites/MainActions2.png[/img][/center][/cell]
 
@@ -75,22 +75,22 @@ texto_ayuda = "[b]Main Actions[/b]
 script = ExtResource("6_cn7je")
 titulo = "Aps and Mps "
 texto_ayuda = "[b]Aps and Mps[/b] 
-
+[font_size=6] [/font_size]
 [table=2, center]
-[cell][img=140%, center]res://assets/sprites/apsMps.png[/img][/cell][cell][font_size=11]aps and mps that the player has are shown in a bar at the bottom of the game. When the player loses the total aps he loses the game.[/font_size][/cell]
+[cell]
+[img=140%, center]res://assets/sprites/apsMps.png[/img][/cell][cell]aps and mps that the player has are shown in a bar at the bottom of the game. When the player loses the total aps he loses the game.[/cell]
 [/table]
-[font_size=11]
 [ul bullet=-]
 [color= WEB_MAROON]Ap[/color]: are action points that limit the number of actions a character can perform in a turn.
 [color= WEB_MAROON]Mp[/color]: are magic points that determine the amount of magic skills or spells a character can cast.
 [/ul]
-[/font_size]
-[table=1]
-[cell padding=0,5,0,5][center][img=350%]res://assets/sprites/apsMps2.png[/img][/center][/cell]
-[cell padding=0,5,0,5][font_size=11]This second type of blade, although less common, has a higher level of damage to its opponents.[/font_size][/cell]
-[/table]
-[table=2, center]
-[cell][img=35%]res://assets/sprites/apMp3.png[/img][/cell][cell][font_size=11]In case you have low AP you can use a first aid kit to heal yourself[/font_size][/cell]
+
+[center][img=350%]res://assets/sprites/apsMps2.png[/img][/center]
+
+This second type of blade, although less common, has a higher level of damage to its opponents.
+
+[table=2, center][cell][img=35%, center]res://assets/sprites/apMp3.png[/img][/cell][cell][font_size=5]  [/font_size]
+In case you have low AP you can use a first aid kit to heal yourself[/cell]
 [/table]
 
 "
@@ -99,16 +99,21 @@ texto_ayuda = "[b]Aps and Mps[/b]
 script = ExtResource("6_cn7je")
 titulo = "GUI"
 texto_ayuda = "[b]interface[/b] 
+[font_size=6] [/font_size]
+[table=2]
+[cell][img=80%]res://assets/sprites/ObjectsMenu.png[/img][/cell]
+[cell]
+Weapons are acquired as you walk through the scenes, these are saved in the [color= DARK_ORANGE]objects menú[/color].[/cell]
+[/table]
+The fire arms and ammunition equipment that you can find in the game are listed below:
 
 [table=2, center]
-[cell][img=80%]res://assets/sprites/ObjectsMenu.png[/img][/cell][cell][font_size=11]Weapons are acquired as you walk through the scenes, these are saved in the [color= DARK_ORANGE]objects menú[/color].[/font_size][/cell]
+[cell][img=80%]res://assets/sprites/GUImap.png[/img][/cell]
+[cell]
+[font_size=2] [/font_size]
+In the upper right corner you can find the [color= DARK_ORANGE]map[/color], where you can see where you are located in the scene you are in.[/cell]
 [/table]
-[font_size=11]The fire arms and ammunition equipment that you can find in the game are listed below:[/font_size]
-
-[table=2, center]
-[cell][img=80%]res://assets/sprites/GUImap.png[/img][/cell][cell][font_size=11]In the upper right corner you can find the [color= DARK_ORANGE]map[/color], where you can see where you are located in the scene you are in.[/font_size][/cell]
-[/table]
-[font_size=11]The fire arms and ammunition equipment that you can find in the game are listed below:[/font_size]
+The fire arms and ammunition equipment that you can find in the game are listed below.
 
 
 "
@@ -117,23 +122,29 @@ texto_ayuda = "[b]interface[/b]
 script = ExtResource("6_cn7je")
 titulo = "Fire Arms"
 texto_ayuda = "[b]Fire Arms[/b] 
-
+[font_size=6] [/font_size]
 [table=2, center]
-[cell][img=105%]res://assets/sprites/FireArmsIndicator.png[/img][/cell][cell][font_size=11]In the lower left corner, in addition to seeing the player's condition, you can see what weapon he is using and if he has ammunition.[/font_size][/cell]
-[/table]
-[font_size=11]The fire arms and ammunition equipment that you can find in the game are listed below:[/font_size]
+[cell][img=105%]res://assets/sprites/FireArmsIndicator.png[/img][/cell]
+[cell][font_size=8] [/font_size]
+In the lower left corner, in addition to seeing the player's condition, you can see what weapon he is using and if he has ammunition.[/cell]
+[/table] 
+The fire arms and ammunition equipment that you can find in the game are listed below:
 
 [table=2]
-[cell][center][img=150]res://assets/sprites/FireArms4.png[/img][/center][/cell][cell][font_size=11]To use a grenade, pull the pin while holding the lever down. Aim at your target, then throw the grenade in a quick, fluid motion. After throwing, immediately take cover to avoid the explosion.[/font_size][/cell]
 
-[cell][center][img=75%]res://assets/sprites/FireArms1.png[/img][/center][/cell][cell][font_size=11]To use a grenade, pull the pin while holding the lever down. Aim at your target, then throw the grenade in a quick, fluid motion. After throwing, immediately take cover to avoid the explosion.[/font_size][/cell]
+[cell padding=0,0,0,5][font_size=5] [/font_size][center][img=150]res://assets/sprites/FireArms4.png[/img][/center][/cell][cell]To use a grenade, pull the pin while holding the lever down. Aim at your target, then throw the grenade in a quick, fluid motion. After throwing, immediately take cover to avoid the explosion.[/cell]
 
-[cell][center][img=150]res://assets/sprites/FireArms2.png[/img][/center][/cell][cell][font_size=11]To use a rifle, hold it steady, aim through the sight or scope at a distant target, and squeeze the trigger gently to fire[/font_size][/cell]
+[cell][center][img=75%]res://assets/sprites/FireArms1.png[/img][/center][/cell][cell]To use a grenade, pull the pin while holding the lever down. Aim at your target, then throw the grenade in a quick, fluid motion. After throwing, immediately take cover to avoid the explosion.[/cell]
 
+[cell][center][img=150]res://assets/sprites/FireArms2.png[/img][/center][/cell]
+[cell][font_size=8] [/font_size]
+To use a rifle, hold it steady, aim through the sight or scope at a distant target, and squeeze the trigger gently to fire[/cell]
 
-[cell][center][img=75%]res://assets/sprites/FireArms3.png[/img][/center][/cell][cell][font_size=11]Using a pistol you must to approach the target at close range, aim quickly at the center mass, and pull the trigger with a firm grip.[/font_size][/cell]
+[cell][center][img=75%]res://assets/sprites/FireArms3.png[/img][/center][/cell][cell]Using a pistol you must to approach the target at close range, aim quickly at the center mass, and pull the trigger with a firm grip.[/cell]
 
-[cell][center][img=75%]res://assets/sprites/FireArms5.png[/img][/center][/cell][cell][font_size=11]Pistol ammunition[/font_size][/cell]
+[cell][center][img=75%]res://assets/sprites/FireArms5.png[/img][/center][/cell]
+[cell][font_size=8] [/font_size]
+Pistol ammunition[/cell]
 
 [/table]
 "
@@ -141,16 +152,16 @@ texto_ayuda = "[b]Fire Arms[/b]
 [sub_resource type="Resource" id="Resource_n03jy"]
 script = ExtResource("6_cn7je")
 titulo = "Blades"
-texto_ayuda = "[b]Fire Arms[/b] 
-[table=2]
-[cell][center][img=75%]res://assets/sprites/Blades1.png[/img][/center][/cell][cell][font_size=11]To use a grenade, pull the pin while holding the lever down.[/font_size][/cell]
+texto_ayuda = "[b]Blades[/b] 
+[table=2][cell][img=60%]res://assets/sprites/Blades1.png[/img][/cell]
+[cell]
+[font_size=11]To use a grenade, pull the pin while holding the lever down.[/font_size]
+[/cell]
+[cell][img=60%]res://assets/sprites/blade2.png[/img][/cell]
+[cell][font_size=6] [/font_size][left]This second type of blade, although less common, has a higher level of damage to its opponents.[/left][/cell]
+[/table][font_size=11]In a game, blades can be versatile weapons used for both offense and defense. Players can use them to perform quick, light attacks that deal damage in rapid succession or execute powerful strikes with slower, more deliberate movements. Blades are often effective in close combat, allowing players to dodge or parry incoming attacks while staying mobile[/font_size]
 
-
-[cell][center][img=75%]res://assets/sprites/blade2.png[/img][/center][/cell][cell][font_size=11]This second type of blade, although less common, has a higher level of damage to its opponents.[/font_size][/cell]
-[/table]
-[font_size=11]In a game, blades can be versatile weapons used for both offense and defense. Players can use them to perform quick, light attacks that deal damage in rapid succession or execute powerful strikes with slower, more deliberate movements. Blades are often effective in close combat, allowing players to dodge or parry incoming attacks while staying mobile[/font_size]
-
-[font_size=11]To make the most of blades, focus on speed and precision. Timing your attacks and dodges is key to outmaneuvering enemies. Some games may also let you upgrade blades with special abilities, like increasing damage, adding elemental effects, or enhancing critical hit chances[/font_size]
+[p]To make the most of blades, focus on speed and precision. Timing your attacks and dodges is key to outmaneuvering enemies. Some games may also let you upgrade blades with special abilities, like increasing damage, adding elemental effects, or enhancing critical hit chances.[/p]
 
 
 "
@@ -180,6 +191,7 @@ border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Theme" id="Theme_pvvsn"]
 default_base_scale = 0.85
+default_font_size = 11
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_tcibf")
 
 [node name="main" type="Node2D"]
@@ -346,17 +358,17 @@ layout_mode = 2
 bbcode_enabled = true
 text = "[b]Help Panel [/b] 
 
-[font_size=11]If you have questions about the game, here you can find information about the elements that make up the game and how to play.
+If you have questions about the game, here you can find information about the elements that make up the game and how to play.
 
-In this panel you will find each piece of information in a sectioned form in each of the buttons on the left side.:[/font_size]
+In this panel you will find each piece of information in a sectioned form in each of the buttons on the left side.:
 
-[font_size=11][ul bullet=-]
+[ul bullet=-]
  [hint=Information about the buttons you should use to move around the game][color= ORANGE_RED]Controls[/color][/hint]
- [color= ORANGE_RED]Main Actions[/color] 
- [color= ORANGE_RED]Aps and Mps[/color] 
- [color= ORANGE_RED]Fire Arms and ammunition[/color] 
- [color= ORANGE_RED]Blades[/color] 
-[/ul][/font_size]
+ [hint=Information about the principal movements and actions][color= ORANGE_RED]Main Actions[/color][/hint]
+ [hint=Information about life and powers in the game][color= ORANGE_RED]Aps and Mps[/color][/hint]
+ [hint=Information about arms and ammunitions][color= ORANGE_RED]Arms and ammunition[/color][/hint]
+ [hint=Information about the blades that you could find][color= ORANGE_RED]Blades[/color][/hint]
+[/ul]
 
 
 "
