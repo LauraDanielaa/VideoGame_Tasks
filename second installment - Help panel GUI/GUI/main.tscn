@@ -1,13 +1,17 @@
-[gd_scene load_steps=25 format=3 uid="uid://bt3umb5c7rdsh"]
+[gd_scene load_steps=29 format=3 uid="uid://bt3umb5c7rdsh"]
 
 [ext_resource type="Script" path="res://GUI/main.gd" id="1_3quux"]
 [ext_resource type="Texture2D" uid="uid://bo70j7m7ipxty" path="res://assets/sprites/interrogation.png" id="1_eb6tx"]
 [ext_resource type="Texture2D" uid="uid://bwk0a0bx6tuc0" path="res://assets/sprites/hover_button.jpg" id="2_m7cnb"]
+[ext_resource type="AudioStream" uid="uid://biyef08yvvt3s" path="res://assets/audio/ui_doc_open.ogg" id="5_tkp7j"]
 [ext_resource type="Script" path="res://GUI/button.gd" id="5_wcxnc"]
 [ext_resource type="Script" path="res://GUI/RightPanelText.gd" id="6_cn7je"]
 [ext_resource type="FontFile" uid="uid://crw3usvl5dopj" path="res://assets/calligraphy/DePixelBreit.ttf" id="6_sau2q"]
 [ext_resource type="Texture2D" uid="uid://vf2fjia8ml80" path="res://assets/sprites/exit.png" id="6_v0s5o"]
+[ext_resource type="AudioStream" uid="uid://c2r57dmspmob1" path="res://assets/audio/ui_doc_page.ogg" id="8_5s0ir"]
 [ext_resource type="Texture2D" uid="uid://byy1igqd12n7t" path="res://assets/sprites/hover_exit.jpg" id="8_61c1v"]
+[ext_resource type="Script" path="res://GUI/exit_button.gd" id="11_kob73"]
+[ext_resource type="AudioStream" uid="uid://b2al4dxngytx3" path="res://assets/audio/ui_doc_close.ogg" id="12_nraoo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cm4j8"]
 bg_color = Color(0.00784314, 0.0784314, 0.0862745, 1)
@@ -225,6 +229,9 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("1_eb6tx")
 texture_hover = ExtResource("2_m7cnb")
 
+[node name="HelpButtonAudio" type="AudioStreamPlayer2D" parent="HelpButtonLayer/HBoxContainer/help_button"]
+stream = ExtResource("5_tkp7j")
+
 [node name="PrincipalPanelLayer" type="CanvasLayer" parent="."]
 
 [node name="MarginContainer" type="MarginContainer" parent="PrincipalPanelLayer"]
@@ -274,6 +281,9 @@ alignment = 0
 script = ExtResource("5_wcxnc")
 right_panel_text = SubResource("Resource_whfg6")
 
+[node name="LeftPanelAudio" type="AudioStreamPlayer2D" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/ControlsButton"]
+stream = ExtResource("8_5s0ir")
+
 [node name="MainActionsButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_ubwcp")
@@ -283,6 +293,9 @@ alignment = 0
 script = ExtResource("5_wcxnc")
 right_panel_text = SubResource("Resource_w86b4")
 
+[node name="LeftPanelAudio" type="AudioStreamPlayer2D" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/MainActionsButton"]
+stream = ExtResource("8_5s0ir")
+
 [node name="APButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_ubwcp")
@@ -291,6 +304,9 @@ text = "APS AND MPS"
 alignment = 0
 script = ExtResource("5_wcxnc")
 right_panel_text = SubResource("Resource_u35g0")
+
+[node name="LeftPanelAudio" type="AudioStreamPlayer2D" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/APButton"]
+stream = ExtResource("8_5s0ir")
 
 [node name="GUIButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
@@ -302,6 +318,9 @@ alignment = 0
 script = ExtResource("5_wcxnc")
 right_panel_text = SubResource("Resource_5lx6f")
 
+[node name="LeftPanelAudio" type="AudioStreamPlayer2D" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/GUIButton"]
+stream = ExtResource("8_5s0ir")
+
 [node name="FirearmsButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_ubwcp")
@@ -310,6 +329,9 @@ text = "FIREARMS"
 alignment = 0
 script = ExtResource("5_wcxnc")
 right_panel_text = SubResource("Resource_k8cdx")
+
+[node name="LeftPanelAudio" type="AudioStreamPlayer2D" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/FirearmsButton"]
+stream = ExtResource("8_5s0ir")
 
 [node name="BladesButton" type="Button" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
@@ -320,6 +342,9 @@ text = "BLADES
 alignment = 0
 script = ExtResource("5_wcxnc")
 right_panel_text = SubResource("Resource_n03jy")
+
+[node name="LeftPanelAudio" type="AudioStreamPlayer2D" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/BladesButton"]
+stream = ExtResource("8_5s0ir")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -343,6 +368,10 @@ texture_normal = ExtResource("6_v0s5o")
 texture_hover = ExtResource("8_61c1v")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("11_kob73")
+
+[node name="ExitAudio" type="AudioStreamPlayer2D" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/ExitPanel/HBoxContainer/ExitButton"]
+stream = ExtResource("12_nraoo")
 
 [node name="RightPanel" type="PanelContainer" parent="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 400)
@@ -374,4 +403,10 @@ In this panel you will find each piece of information in a sectioned form in eac
 "
 
 [connection signal="pressed" from="HelpButtonLayer/HBoxContainer/help_button" to="." method="_on_help_button_pressed"]
+[connection signal="pressed" from="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/ControlsButton" to="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/ControlsButton" method="_on_pressed"]
+[connection signal="pressed" from="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/MainActionsButton" to="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/MainActionsButton" method="_on_pressed"]
+[connection signal="pressed" from="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/APButton" to="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/APButton" method="_on_pressed"]
+[connection signal="pressed" from="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/GUIButton" to="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/GUIButton" method="_on_pressed"]
+[connection signal="pressed" from="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/FirearmsButton" to="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/FirearmsButton" method="_on_pressed"]
+[connection signal="pressed" from="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/BladesButton" to="PrincipalPanelLayer/MarginContainer/HBoxContainer/LeftPanel/VBoxContainer/BladesButton" method="_on_pressed"]
 [connection signal="pressed" from="PrincipalPanelLayer/MarginContainer/HBoxContainer/VBoxContainer/ExitPanel/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
