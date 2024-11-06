@@ -1,6 +1,21 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dwd6iptqg752e"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dwd6iptqg752e"]
+
+[ext_resource type="FontFile" uid="uid://bwoywixp6o6ne" path="res://assets/calligraphy/pixChicago.ttf" id="1_0w0gg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g7t81"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1sglm"]
+bg_color = Color(0.00784314, 0.172549, 0.2, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(3.00817e-09, 0.0762744, 0.058226, 1)
+border_blend = true
+
 [resource]
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_g7t81")
+TooltipLabel/colors/font_color = Color(0.887282, 0.979409, 0.99858, 1)
+TooltipLabel/font_sizes/font_size = 7
+TooltipLabel/fonts/font = ExtResource("1_0w0gg")
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_1sglm")

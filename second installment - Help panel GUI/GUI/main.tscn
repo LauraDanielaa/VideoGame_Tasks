@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://bt3umb5c7rdsh"]
+[gd_scene load_steps=30 format=3 uid="uid://bt3umb5c7rdsh"]
 
 [ext_resource type="Script" path="res://GUI/main.gd" id="1_3quux"]
 [ext_resource type="Texture2D" uid="uid://bo70j7m7ipxty" path="res://assets/sprites/interrogation.png" id="1_eb6tx"]
+[ext_resource type="Theme" uid="uid://dwd6iptqg752e" path="res://resourse/new_theme.tres" id="2_2vor0"]
 [ext_resource type="Texture2D" uid="uid://bwk0a0bx6tuc0" path="res://assets/sprites/hover_button.jpg" id="2_m7cnb"]
 [ext_resource type="AudioStream" uid="uid://biyef08yvvt3s" path="res://assets/audio/ui_doc_open.ogg" id="5_tkp7j"]
 [ext_resource type="Script" path="res://GUI/button.gd" id="5_wcxnc"]
@@ -226,6 +227,7 @@ theme_override_constants/separation = 10
 layout_mode = 2
 tooltip_text = "Help panel"
 mouse_default_cursor_shape = 2
+theme = ExtResource("2_2vor0")
 texture_normal = ExtResource("1_eb6tx")
 texture_hover = ExtResource("2_m7cnb")
 
